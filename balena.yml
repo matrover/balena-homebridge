@@ -1,0 +1,24 @@
+name: homebridge
+type: sw.application
+joinable: false
+description: >-
+  Homebridge allows you to integrate with smart home devices that do not natively support HomeKit. There are over 2,000 Homebridge plugins supporting thousands of different smart accessories.
+post-provisioning: >-
+  ## Usage instructions
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/matrover/balena-homebridge'
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://raw.githubusercontent.com/matrover/balena-homebridge/master/logo.png'
+data:
+  applicationEnvironmentVariables:
+  defaultDeviceType: intel-nuc
+  supportedDeviceTypes:
+    - generic-x86-64
+    - generic-x86
+    - intel-nuc
+version: 0.0.1
