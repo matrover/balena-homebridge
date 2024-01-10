@@ -1,0 +1,15 @@
+version: '2.0'
+
+services:
+  homebridge:
+    build: .
+    container_name: homebridge
+    volumes:
+      - homebridge-config:/config
+    ports:
+      - "51826:51826"
+      - "8581:8581"
+    restart: unless-stopped
+
+volumes:
+  homebridge-config:
