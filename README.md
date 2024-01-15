@@ -1,6 +1,6 @@
 # Homebridge on Balena
 
-:construction_worker: still a work in progress :construction_worker:
+Works but :construction_worker: still a work in progress :construction_worker:
 
 Homebridge on Balena
 
