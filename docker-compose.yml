@@ -1,15 +1,23 @@
-version: '2.0'
-
+version: '2'
 services:
   homebridge:
-    build: .
-    container_name: homebridge
+    image: homebridge/homebridge:latest
+    restart: always
+    network_mode: host
+    ports: 
+    - 8581:80
+    environment:
+    - TZ=Europe/Amsterdam
+    - PGID=1000
+    - PUID=1000
+    - HOMEBRIDGE_CONFIG_UI=1
+    - HOMEBRIDGE_CONFIG_UI_PORT=8581
     volumes:
-      - homebridge-config:/config
-    ports:
-      - "51826:51826"
-      - "8581:8581"
-    restart: unless-stopped
-
+      - homebridge:/homebridge
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 volumes:
-  homebridge-config:
+  homebridge:
