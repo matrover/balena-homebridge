@@ -4,14 +4,12 @@ services:
     image: homebridge/homebridge:latest
     restart: always
     network_mode: host
-    ports: 
-    - 8581:80
     environment:
     - TZ=Europe/Amsterdam
     - PGID=1000
     - PUID=1000
     - HOMEBRIDGE_CONFIG_UI=1
-    - HOMEBRIDGE_CONFIG_UI_PORT=8581
+    - HOMEBRIDGE_CONFIG_UI_PORT=80
     volumes:
       - homebridge:/homebridge
     logging:
